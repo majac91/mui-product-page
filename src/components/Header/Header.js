@@ -37,12 +37,12 @@ const Header = () => {
           <Box sx={{ flexGrow: 1 }} />
           {/*favorite and facts icons*/}
           <Box>
-            <IconButton padding={0}>
+            <IconButton aria-label="facts" padding={0} disableRipple>
               <SvgIcon color='secondary' sx={{margin: {sm: '8px', md:'20px 0'}}}>
                 <FactsIcon/>
               </SvgIcon>
             </IconButton>
-            <IconButton onClick={() => setFavorite(!favorite)}>
+            <IconButton aria-label="add to favorites" disableRipple onClick={() => setFavorite(!favorite)}>
               {favorite ? <SvgIcon color='primary' sx={{margin: {sm: '8px', md:'20px 10px'}}}><FavoriteFilledIcon/></SvgIcon>
                         : <SvgIcon color='secondary' sx={{margin: {sm: '8px', md:'20px 10px'}}}><FavoriteIcon/></SvgIcon>
               }
@@ -50,8 +50,8 @@ const Header = () => {
           </Box>
           {/*cart*/}
           <Box style={{ display: 'flex' }}>
-            <Divider orientation="vertical" variant='fullWidth' flexItem style={{ minHeight: "auto"}} />
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <Divider orientation="vertical" variant='fullWidth' flexItem style={{ minHeight: "auto"}}/>
+            <IconButton size="large" aria-label="add to cart" color="inherit" disableRipple>
               <Badge badgeContent={data.cart.items} color="primary" sx={{marginLeft: {sm: '8px', md:'10px'}}}>
                 <SvgIcon color='secondary'>
                   <CartIcon />

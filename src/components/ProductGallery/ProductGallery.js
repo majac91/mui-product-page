@@ -1,4 +1,5 @@
 import React, {useState, useRef} from "react";
+import data from '../../data/data.json'
 
 import ImageGallery from 'react-image-gallery';
 import {ZoomBtnWrapper} from './style'
@@ -6,7 +7,6 @@ import {ZoomBtnWrapper} from './style'
 import PackageIcon from '../../icons/package.svg'
 import {ReactComponent as ZoomIn} from '../../icons/zoom-in.svg'
 import {ReactComponent as ZoomOut} from '../../icons/zoom-out.svg'
-
 
 const ProductGallery = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -18,21 +18,26 @@ const ProductGallery = () => {
   }
 
   const renderCustomControls = () => {
-    return <ZoomBtnWrapper onClick={handleFullScreen}>
+    return <ZoomBtnWrapper disableRipple onClick={handleFullScreen} aria-label={isFullscreen ? "zoom out" : "zoom in"}>
             {isFullscreen ? <ZoomOut/> : <ZoomIn />}
           </ZoomBtnWrapper>
   }
 
-  const images = [
-    {
-      original: PackageIcon,
-      thumbnail: PackageIcon,
-    },
-    {
-      original: PackageIcon,
-      thumbnail: PackageIcon,
-    }
-  ];
+  const getImages = () =>  {
+    const images = [];
+    data.article.images.forEach(imgUrl => {
+      images.push(
+          {
+            original: imgUrl && imgUrl.status == 200 ? imgUrl : PackageIcon, //show icon in case the image is not valid
+            thumbnail: imgUrl && imgUrl.status == 200 ? imgUrl : PackageIcon,
+          }
+      )
+    });
+
+    return images;
+  }
+
+  const images = getImages();
 
   return (
     <div>
