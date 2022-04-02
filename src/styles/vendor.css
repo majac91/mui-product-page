@@ -1,0 +1,39 @@
+.image-gallery-image, .image-gallery-thumbnail {
+  border: 1px solid #E8E8E8;
+}
+
+.image-gallery-image {
+  padding: 20px;
+  border: 1px solid #E8E8E8;
+}
+
+.image-gallery-thumbnail {
+  padding: 20px!important;
+}
+
+
+.image-gallery img {
+  transition: transform.4s ease;
+}
+
+.image-gallery-thumbnail.active{
+  border: 3px solid #A7A7A7 !important;
+}
+
+.image-gallery-thumbnail:hover {
+  border: initial;
+}
+
+.image-gallery-thumbnail:hover img{
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .image-gallery-image {
+    padding: 100px;
+  }
+
+  .image-gallery-thumbnail {
+    margin-bottom: 10px;
+  }
+}
