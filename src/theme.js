@@ -12,13 +12,16 @@ const theme = createTheme({
     },
     background: {
       default: '#fff',
-      paper: '#EFEFEF',
+      // paper: '#EFEFEF',
     },
     text: {
       primary: '#333333',
     },
     info: {
-      main: '#678A9D',
+      main: '#7594A5',
+    },
+    accent: {
+      main: '#7594A5',
     },
     divider: '#E9E9E9',
   },

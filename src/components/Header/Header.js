@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar color='transparent' elevation={scrollPosition > 0 ? 4 : 1}>
+      <AppBar color='background' elevation={scrollPosition > 0 ? 4 : 1}>
         <Toolbar variant='dense' style={{alignItems: 'unset'}}>
           {/*title*/}
           <Typography
