@@ -1,5 +1,6 @@
 .image-gallery-image, .image-gallery-thumbnail {
   border: 1px solid #E8E8E8;
+  background: white;
 }
 
 .image-gallery-image {
@@ -11,7 +12,6 @@
   padding: 20px!important;
 }
 
-
 .image-gallery img {
   transition: transform.4s ease;
 }
@@ -20,12 +20,18 @@
   border: 3px solid #A7A7A7 !important;
 }
 
-.image-gallery-thumbnail:hover {
-  border: initial;
+.image-gallery-thumbnail:not(.active):hover {
+  border: 1px solid #E8E8E8;
 }
 
 .image-gallery-thumbnail:hover img{
   transform: scale(1.1);
+}
+
+.image-gallery-fullscreen-button {
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
