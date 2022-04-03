@@ -21,8 +21,8 @@ const Header = () => {
   const [isButtonVisible, ] = useContext(AddButtonCtx);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar color='default' elevation={scrollPosition > 0 ? 4 : 1}>
+    <Box sx={{ flexGrow: 1 }} component={'nav'}>
+      <AppBar color='white' elevation={scrollPosition > 0 ? 4 : 1}>
         <Toolbar variant='dense' style={{alignItems: 'unset'}}>
           {/*title*/}
           <Typography

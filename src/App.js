@@ -7,6 +7,7 @@ import AddButtonCtx from "./context/AddButtonContext";
 
 import Header from "./components/Header/Header";
 import ProductMain from "./components/ProductMain/ProductMain";
+import ProductAbout from "./components/ProductAbout/ProductAbout";
 
 function App() {
   const [cartItems, setCartItems] = useState(data.cart.items);
@@ -19,6 +20,7 @@ function App() {
       <AddButtonCtx.Provider value={[isButtonVisible, setIsButtonVisible]}>
         <Header/>
         <ProductMain/>
+        <ProductAbout/>
       </AddButtonCtx.Provider>
     </CartCtx.Provider>
   );

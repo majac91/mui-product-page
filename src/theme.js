@@ -11,7 +11,6 @@ const theme = createTheme({
       main: '#A7A7A7',
     },
     background: {
-      default: '#fff',
       paper: '#EFEFEF',
     },
     text: {
@@ -24,6 +23,8 @@ const theme = createTheme({
       main: '#7594A5',
     },
     divider: '#E9E9E9',
+    white: 'fff',
+
   },
   typography: {
     fontFamily: 'Roboto',
@@ -40,6 +41,12 @@ const theme = createTheme({
       fontSize: '1.2rem',
       fontWeight: 500,
     },
+    aboutHeading: {
+      color: "#DE4D40",
+      fontSize: "1rem",
+      fontWeight: 500,
+      textTransform: 'uppercase'
+    },
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -53,6 +60,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#fff'
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {

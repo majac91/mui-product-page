@@ -8,7 +8,7 @@ import ProductMainDetails from "../ProductMainDetails/ProductMainDetails"
 const ProductMain = () => {
 
 return (
-    <Toolbar sx={{paddingTop: {sm: '40px', md:'150px'}}}>
+    <Toolbar sx={{paddingTop: {sm: '40px', md:'150px'}}} component={'section'}>
       <Grid container spacing={5} columnSpacing={{ xs: 5, sm: 2, md: 3 }}>
         <Grid item xs={12} md={5} >
           <ProductGallery/>
