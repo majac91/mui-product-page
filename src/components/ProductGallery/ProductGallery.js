@@ -28,8 +28,8 @@ const ProductGallery = () => {
     data.article.images.forEach(imgUrl => {
       images.push(
           {
-            original: imgUrl && imgUrl.status == 200 ? imgUrl : PackageIcon, //show icon in case the image is not valid
-            thumbnail: imgUrl && imgUrl.status == 200 ? imgUrl : PackageIcon,
+            original: imgUrl && imgUrl.status === 200 ? imgUrl : PackageIcon, //show icon in case the image is not valid
+            thumbnail: imgUrl && imgUrl.status === 200 ? imgUrl : PackageIcon,
           }
       )
     });

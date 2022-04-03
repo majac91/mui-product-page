@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+
 import data from '../../data/data.json'
+import CartCtx from "../../context/CartContext";
 
-import {Toolbar, Box, Link, Grid, Typography, Rating, Stack} from "@mui/material";
-
+import {Toolbar, Box, Link, Grid, Typography, Rating, Stack, TextField, Button} from "@mui/material";
 import ProductGallery from "../ProductGallery/ProductGallery";
 
 const ProductMain = () => {
+const [, setCartItems] = useContext(CartCtx);
+const [inputValue, setInputValue] = useState(1);
+
+const handleAddToCart = () => setCartItems((prevVal) => prevVal + inputValue);
+const handleValueChange = (e) => setInputValue(Number(e.target.value));
 
 return (
     <Toolbar sx={{paddingTop: {sm: '40px', md:'150px'}}}>
@@ -31,8 +37,11 @@ return (
             <Box component={'span'} style={{color: '#A7A7A7'}}> + {data.article.transport_costs} shipping</Box>
           </Typography>
           <Typography mt={1} fontWeight={500} color={'secondary'}> all prices incl {data.article.vat_percent}% taxes</Typography>
-
-        </Grid>
+          <Box>
+            <TextField onChange={(e) => handleValueChange(e)} value={inputValue} type='number' id="outlined-basic" label="Outlined" variant="outlined" />
+            <Button onClick={handleAddToCart}>Add to card</Button>
+          </Box>
+          </Grid>
         </Grid>
     </Toolbar>
   )
