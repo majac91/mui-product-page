@@ -10,11 +10,12 @@ import ProductMain from "./components/ProductMain/ProductMain";
 
 function App() {
   const [cartItems, setCartItems] = useState(data.cart.items);
-  const [isButtonVisible, setIsButtonVisible] = useState();
+  const [inputValue, setInputValue] = useState(1);
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
   console.log(isButtonVisible);
 
   return (
-    <CartCtx.Provider value={[cartItems, setCartItems]}>
+    <CartCtx.Provider value={[cartItems, setCartItems, inputValue, setInputValue]}>
       <AddButtonCtx.Provider value={[isButtonVisible, setIsButtonVisible]}>
         <Header/>
         <ProductMain/>

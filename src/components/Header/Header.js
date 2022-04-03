@@ -2,8 +2,10 @@ import React, {useState, useContext} from "react";
 
 import data from '../../data/data.json'
 import CartCtx from "../../context/CartContext";
+import AddButtonCtx from "../../context/AddButtonContext";
 
 import {AppBar, Box, Toolbar, IconButton, Typography, Badge, SvgIcon, Divider} from '@mui/material';
+import AddButton from "../AddButton/AddButton";
 
 import {ReactComponent as CartIcon} from '../../icons/cart.svg';
 import {ReactComponent as FavoriteIcon} from '../../icons/favorite.svg';
@@ -16,6 +18,7 @@ const Header = () => {
   const [favorite, setFavorite] = useState(null);
   const scrollPosition = useScrollPosition(); //get window position for header border rendering purposes
   const [cartItems, ] = useContext(CartCtx);
+  const [isButtonVisible, ] = useContext(AddButtonCtx);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -31,6 +34,8 @@ const Header = () => {
             {data.article.title}
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
+          {/*render when product main button is out of view*/}
+          {!isButtonVisible && <AddButton/>}
           {/*favorite and facts icons*/}
           <Box>
             <IconButton aria-label="facts" padding={0} disableRipple>
