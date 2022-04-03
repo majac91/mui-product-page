@@ -12,7 +12,7 @@ const theme = createTheme({
     },
     background: {
       default: '#fff',
-      // paper: '#EFEFEF',
+      paper: '#EFEFEF',
     },
     text: {
       primary: '#333333',
@@ -48,10 +48,40 @@ const theme = createTheme({
     },
   },
   props: {
-    MuiAppBar: {
-      color: 'transparent',
+    MuiButtonBase: {
+      disableRipple: true,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontSize: '1rem',
+          borderRadius: 0,
+          textTransform: 'unset',
+          boxShadow: 'unset',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          maxWidth: '50px',
+
+          "fieldset" : {
+           borderRadius: 0,
+            padding: 0,
+          },
+
+          "input" : {
+            padding: '5px 0',
+            textAlign: 'right',
+            height: '30px'
+          }
+        },
+      },
+    },
+  }
 
 });
 

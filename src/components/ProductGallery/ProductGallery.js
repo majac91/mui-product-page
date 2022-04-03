@@ -13,11 +13,12 @@ const ProductGallery = () => {
   let galleryRef = useRef();
 
   const handleFullScreen = e => {
-    galleryRef.current.toggleFullScreen();
+    galleryRef.current.toggleFullScreen(); //native plugin method
     setIsFullscreen((prev) => !prev);
   }
 
   const renderCustomControls = () => {
+    //replace the default plugin zoom in button and render different icons based on state
     return <ZoomBtnWrapper disableRipple onClick={handleFullScreen} aria-label={isFullscreen ? "zoom out" : "zoom in"}>
             {isFullscreen ? <ZoomOut/> : <ZoomIn />}
           </ZoomBtnWrapper>
