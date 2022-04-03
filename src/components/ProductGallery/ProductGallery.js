@@ -42,7 +42,7 @@ const ProductGallery = () => {
 
   return (
     <div>
-      <ImageGallery ref={galleryRef} items={images} renderFullscreenButton={renderCustomControls} showPlayButton={false} showNav={false} thumbnailPosition={'left'}/>;
+      <ImageGallery ref={galleryRef} items={images} renderFullscreenButton={renderCustomControls} showPlayButton={false} showNav={false} thumbnailPosition={'left'}/>
     </div>
   )
 };

@@ -1,9 +1,10 @@
 import React from "react";
 
-import {Toolbar, Box, Link, Grid, Typography, Rating, Stack,} from "@mui/material";
+import {Toolbar, Grid,} from "@mui/material";
 import ProductGallery from "../ProductGallery/ProductGallery";
 import AddToCart from "../AddToCart/AddToCart";
 import ProductMainDetails from "../ProductMainDetails/ProductMainDetails"
+
 const ProductMain = () => {
 
 return (

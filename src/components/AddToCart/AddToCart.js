@@ -1,22 +1,34 @@
-import React, {useContext, useState} from "react";
-import {Box,  TextField, Button} from "@mui/material";
+import React, {useContext, useState, useRef, useEffect} from "react";
+
 import CartCtx from "../../context/CartContext";
+import AddButtonCtx from "../../context/AddButtonContext";
+
+import {Box,  TextField, Button} from "@mui/material";
+import AddButton from "../AddButton/AddButton";
 import {ReactComponent as AddIcon} from "../../icons/add.svg";
+
+import {useIsOnScreen} from "../../hooks/useIsOnScreen";
 
 const AddToCart = () => {
   const [, setCartItems] = useContext(CartCtx);
   const [inputValue, setInputValue] = useState(1);
 
-  const handleAddToCart = () => setCartItems((prevVal) => prevVal + inputValue);
+  const [, setIsButtonVisible] = useContext(AddButtonCtx);
+  const buttonRef = useRef();
+  const isOnScreen = useIsOnScreen(buttonRef);
+
+  useEffect(() => {
+    setIsButtonVisible(isOnScreen);
+  }, [isOnScreen])
+
+
   const handleValueChange = (e) => setInputValue(Number(e.target.value));
 
   return (
-    <Box>
+    <Box ref={buttonRef}>
       <TextField onChange={(e) => handleValueChange(e)} value={inputValue} inputProps={{min: 0}}  type='number' variant="outlined"  sx={{ marginRight: 1 }} />
       PCE
-      <Button  variant='contained' aria-label='add to cart' startIcon={<AddIcon style={{width: '15px', height: '15px'}}/>} onClick={handleAddToCart}  sx={{ marginLeft: 2 }}>
-        Add to card
-      </Button>
+      <AddButton inputValue={inputValue} buttonRef={buttonRef}></AddButton>
     </Box>
   )
 }
