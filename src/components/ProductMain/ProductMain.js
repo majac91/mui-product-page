@@ -16,8 +16,8 @@ return (
         <Grid item xs={12} md={4} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
           <ProductMainDetails/>
           <AddToCart/>
-          </Grid>
         </Grid>
+      </Grid>
     </Toolbar>
   )
 }

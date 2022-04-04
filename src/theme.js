@@ -47,6 +47,11 @@ const theme = createTheme({
       fontWeight: 500,
       textTransform: 'uppercase'
     },
+    aboutSubheading: {
+      color: "#A7A7A7",
+      fontSize: "1rem",
+      fontWeight: 500,
+    },
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,

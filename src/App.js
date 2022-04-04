@@ -13,7 +13,6 @@ function App() {
   const [cartItems, setCartItems] = useState(data.cart.items);
   const [inputValue, setInputValue] = useState(1);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
-  console.log(isButtonVisible);
 
   return (
     <CartCtx.Provider value={[cartItems, setCartItems, inputValue, setInputValue]}>
