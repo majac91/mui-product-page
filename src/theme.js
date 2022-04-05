@@ -107,6 +107,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          paddingTop: '0',
+        },
+      },
+    },
   }
 
 });

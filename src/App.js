@@ -13,10 +13,11 @@ function App() {
   const [cartItems, setCartItems] = useState(data.cart.items);
   const [inputValue, setInputValue] = useState(1);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <CartCtx.Provider value={[cartItems, setCartItems, inputValue, setInputValue]}>
-      <AddButtonCtx.Provider value={[isButtonVisible, setIsButtonVisible]}>
+      <AddButtonCtx.Provider value={[isButtonVisible, setIsButtonVisible, isClicked, setIsClicked]}>
         <Header/>
         <ProductMain/>
         <ProductDescription/>

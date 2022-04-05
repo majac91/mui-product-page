@@ -9,12 +9,13 @@ import {ReactComponent as ZoomIn} from '../../icons/zoom-in.svg'
 import {ReactComponent as ZoomOut} from '../../icons/zoom-out.svg'
 
 const ProductGallery = () => {
+
   const [isFullscreen, setIsFullscreen] = useState(false);
+
   let galleryRef = useRef();
   const thumbnailPos = window.innerWidth < 768 ? 'bottom' : 'left';
 
-
-const handleFullScreen = e => {
+  const handleFullScreen = e => {
     galleryRef.current.toggleFullScreen(); //native plugin method
     setIsFullscreen((prev) => !prev);
   }

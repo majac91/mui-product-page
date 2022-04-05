@@ -1,14 +1,24 @@
 import React, {useContext} from "react";
 
 import CartCtx from "../../context/CartContext";
+import AddButtonCtx from "../../context/AddButtonContext";
 
 import {Grid, Button, TextField, Typography} from "@mui/material";
 import {ReactComponent as AddIcon} from "../../icons/add.svg";
 
 const AddButton = () => {
   const [, setCartItems, inputValue, setInputValue] = useContext(CartCtx);
+  const [, , ,setIsClicked] = useContext(AddButtonCtx);
+
   const handleValueChange = (e) => setInputValue(Number(e.target.value));
-  const handleAddToCart = () => setCartItems((prevVal) => prevVal + inputValue);
+  const handleAddToCart = () => {
+    setCartItems((prevVal) => prevVal + inputValue);
+    setIsClicked(true);
+
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 1000)
+  };
 
   return (
     <Grid container flexDirection={'row'} flexWrap={'nowrap'} mr={2} alignItems={'center'} justifyContent={{xs: 'flex-end', lg: 'flex-start'}}>
