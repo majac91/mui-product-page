@@ -11,6 +11,7 @@ const AddButton = () => {
   const [, , ,setIsClicked] = useContext(AddButtonCtx);
 
   const handleValueChange = (e) => setInputValue(Number(e.target.value));
+
   const handleAddToCart = () => {
     setCartItems((prevVal) => prevVal + inputValue);
     setIsClicked(true);

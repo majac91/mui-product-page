@@ -1,6 +1,9 @@
 import React from "react";
+
 import {Box, Link, Typography, Rating, Stack,} from "@mui/material";
+
 import data from "../../data/data.json";
+
 import {ReactComponent as DiscountIcon} from "../../icons/discount.svg";
 
 const ProductMainDetails = () => {

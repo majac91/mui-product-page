@@ -1,6 +1,8 @@
 import React from "react";
-import {Divider, Grid, ListItem} from "@mui/material";
+
 import data from "../../data/data.json";
+
+import {Divider, Grid, ListItem} from "@mui/material";
 
 const PriceBreak = ({count}) => {
 

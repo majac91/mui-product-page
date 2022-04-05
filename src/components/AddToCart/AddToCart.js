@@ -1,4 +1,4 @@
-import React, {useContext, useState, useRef, useEffect} from "react";
+import React, {useContext, useRef, useEffect} from "react";
 
 import AddButtonCtx from "../../context/AddButtonContext";
 
@@ -8,7 +8,7 @@ import AddButton from "../AddButton/AddButton";
 import {useIsOnScreen} from "../../hooks/useIsOnScreen";
 
 const AddToCart = () => {
-  // track when 'add to cart' area of produtc main in in view
+  // track when 'add to cart' area of product main in in view
   // and update state accordingly to display 'add to cart'
   //inside the header
 

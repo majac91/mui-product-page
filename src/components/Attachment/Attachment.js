@@ -6,6 +6,7 @@ import { ListItem, ListItemIcon} from "@mui/material";
 import {ReactComponent as AttachmentIcon} from '../../icons/attachment.svg'
 
 const Attachment = ({item}) => {
+
   return (
     <ListItem sx={{ pb: '0', lineHeight: 1}} disableGutters>
       <ListItemIcon sx={{minWidth: '20px'}}>
