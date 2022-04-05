@@ -11,8 +11,10 @@ import {ReactComponent as ZoomOut} from '../../icons/zoom-out.svg'
 const ProductGallery = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   let galleryRef = useRef();
+  const thumbnailPos = window.innerWidth < 768 ? 'bottom' : 'left';
 
-  const handleFullScreen = e => {
+
+const handleFullScreen = e => {
     galleryRef.current.toggleFullScreen(); //native plugin method
     setIsFullscreen((prev) => !prev);
   }
@@ -42,7 +44,7 @@ const ProductGallery = () => {
 
   return (
     <div>
-      <ImageGallery ref={galleryRef} items={images} renderFullscreenButton={renderCustomControls} showPlayButton={false} showNav={false} thumbnailPosition={'left'}/>
+      <ImageGallery ref={galleryRef} items={images} renderFullscreenButton={renderCustomControls} showPlayButton={false} showNav={false} thumbnailPosition={thumbnailPos}/>
     </div>
   )
 };

@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }} component={'nav'}>
       <AppBar color='white' elevation={scrollPosition > 0 ? 4 : 1}>
-        <Toolbar variant='dense' style={{alignItems: 'unset'}}>
+        <Toolbar variant='dense' style={{alignItems: {xs: 'center', lg: 'unset'}}}>
           {/*title*/}
           <Typography
             variant="h1"
@@ -37,7 +37,7 @@ const Header = () => {
           {/*render when product main button is out of view*/}
           {!isButtonVisible && <AddButton/>}
           {/*favorite and facts icons*/}
-          <Box>
+          <Box display={'flex'} flexDirection={['column', 'row']}>
             <IconButton aria-label="facts" padding={0} disableRipple>
               <SvgIcon color='secondary' sx={{margin: {sm: '8px', md:'20px 0'}}}>
                 <FactsIcon/>

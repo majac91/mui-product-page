@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 
 import CartCtx from "../../context/CartContext";
 
-import {Box, Button, TextField} from "@mui/material";
+import {Grid, Button, TextField, Typography} from "@mui/material";
 import {ReactComponent as AddIcon} from "../../icons/add.svg";
 
 const AddButton = () => {
@@ -11,13 +11,17 @@ const AddButton = () => {
   const handleAddToCart = () => setCartItems((prevVal) => prevVal + inputValue);
 
   return (
-    <Box style={{display: 'flex', alignItems: 'center'}} mr={2}>
-      <TextField onChange={(e) => handleValueChange(e)} value={inputValue} inputProps={{min: 0}}  type='number' variant="outlined"  sx={{ marginRight: 1 }} />
-      PCE
-      <Button variant='contained' aria-label='add to cart' startIcon={<AddIcon style={{width: '15px', height: '15px'}}/>} onClick={handleAddToCart}  sx={{ marginLeft: 2 }}>
-        Add to cart
-      </Button>
-    </Box>
+    <Grid container flexDirection={'row'} flexWrap={'nowrap'} mr={2} alignItems={'center'} justifyContent={{xs: 'flex-end', lg: 'flex-start'}}>
+      <Grid item sx={{display: {xs: 'none', sm: 'flex'}, alignItems: 'center'}}>
+        <TextField onChange={(e) => handleValueChange(e)} value={inputValue} inputProps={{min: 0}}  type='number' variant="outlined"  sx={{ marginRight: 1, minWidth: '35px' }} />
+        <Typography component={'span'}>PCE</Typography>
+      </Grid>
+      <Grid item>
+        <Button variant='contained' aria-label='add to cart' startIcon={<AddIcon style={{width: '15px', height: '15px'}}/>} onClick={handleAddToCart}  sx={{ marginLeft: 2, whiteSpace: 'nowrap' }}>
+          Add to cart
+        </Button>
+      </Grid>
+    </Grid>
   )
 }
 
