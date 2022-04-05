@@ -1,4 +1,4 @@
-import {useState, useLayoutEffect, useEffect} from "react";
+import {useState, useEffect} from "react";
 
 export function useIsOnScreen(ref) {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -12,10 +12,8 @@ export function useIsOnScreen(ref) {
         });
       };
 
-    // if (document.readyState === "complete" || document.readyState === "loaded") {
       const observer = new IntersectionObserver(callback, options);
       observer.observe(ref.current);
-    // }
 
   }, [ref]);
 

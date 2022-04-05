@@ -2,7 +2,3 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 @import "./styles/vendor.css";
 
-body {
-    height: 300vh;
-}
-

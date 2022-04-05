@@ -23,7 +23,7 @@ const theme = createTheme({
       main: '#7594A5',
     },
     divider: '#E9E9E9',
-    white: 'fff',
+    white: '#fff',
 
   },
   typography: {
@@ -97,6 +97,13 @@ const theme = createTheme({
             textAlign: 'right',
             height: '30px'
           }
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#7594A5',
         },
       },
     },
